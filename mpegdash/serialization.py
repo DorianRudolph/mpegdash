@@ -71,7 +71,7 @@ class XMLSerializer(object):
                 if isinstance(XMLSerializer.ATTRIBUTES_VALIDATION[self._xml_element.tag][attribute], list):
                     if value not in XMLSerializer.ATTRIBUTES_VALIDATION[self._xml_element.tag][attribute]:
                         raise TypeError("{} '{}' attribute: '{}' is invalid".format(self._xml_element.tag, attribute, value))
-            if not isinstance(value, basestring):
+            if not isinstance(value, str):
                 value = str(value)
             self._xml_element.set(attribute, value)
 
